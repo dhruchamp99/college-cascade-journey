@@ -166,10 +166,10 @@ const Home = () => {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-screen flex flex-col overflow-hidden"
       >
-        {/* Spline 3D Background */}
-        <div className="absolute inset-0 w-full h-full">
+        {/* Spline 3D Model */}
+        <div className="flex-1 w-full h-2/3">
           <iframe 
             src='https://my.spline.design/nexbotrobotcharacterconcept-S5tN6NGYWgY5DG5TZQR3LSDR/' 
             frameBorder='0' 
@@ -179,23 +179,25 @@ const Home = () => {
           />
         </div>
 
-        {/* Content Overlay */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center px-6 bg-black/20 backdrop-blur-sm rounded-2xl p-8">
-          <h1 className="hero-title text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Learn. Grow. <span className="text-primary-glow">Lead.</span>
-          </h1>
-          
-          <p className="hero-subtitle text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Transform your future with world-class education. Join thousands of students who have achieved their dreams at EduVerse College.
-          </p>
+        {/* Content Below */}
+        <div className="relative z-10 flex-1 flex items-center justify-center bg-background/95 backdrop-blur-sm">
+          <div className="max-w-3xl mx-auto text-center px-6 py-8">
+            <h1 className="hero-title text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Learn. Grow. <span className="text-primary">Lead.</span>
+            </h1>
+            
+            <p className="hero-subtitle text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Transform your future with world-class education at EduVerse College.
+            </p>
 
-          <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" onClick={() => scrollToSection('courses')}>
-              Explore Courses
-            </Button>
-            <Button variant="hero-outline" size="lg">
-              Apply Now
-            </Button>
+            <div className="hero-buttons flex flex-col sm:flex-row gap-3 justify-center">
+              <Button variant="default" size="lg" onClick={() => scrollToSection('courses')}>
+                Explore Courses
+              </Button>
+              <Button variant="outline" size="lg">
+                Apply Now
+              </Button>
+            </div>
           </div>
         </div>
 
