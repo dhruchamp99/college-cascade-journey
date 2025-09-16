@@ -166,14 +166,21 @@ const Home = () => {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative h-screen flex items-center justify-center bg-hero-gradient overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        className="relative h-screen flex items-center justify-center overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto text-center px-6 z-10">
+        {/* Spline 3D Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <iframe 
+            src='https://my.spline.design/nexbotrobotcharacterconcept-S5tN6NGYWgY5DG5TZQR3LSDR/' 
+            frameBorder='0' 
+            width='100%' 
+            height='100%'
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-6 bg-black/20 backdrop-blur-sm rounded-2xl p-8">
           <h1 className="hero-title text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Learn. Grow. <span className="text-primary-glow">Lead.</span>
           </h1>
@@ -194,7 +201,7 @@ const Home = () => {
 
         {/* Scroll Arrow */}
         <div 
-          className="scroll-arrow absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          className="scroll-arrow absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-10"
           onClick={() => scrollToSection('courses')}
         >
           <ChevronDown className="h-8 w-8 text-white animate-bounce" />
